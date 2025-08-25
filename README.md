@@ -35,11 +35,11 @@ The script checks for these tools on startup and exits with an error if any are 
    ```
 2. Make it executable:
    ```bash
-   cd doublezero-latency-check && chmod +x dz-latencies.py
+   cd doublezero-latency-check && chmod +x doublezero-latency-check.py
    ```
 3. run it:
    ```bash
-   ./dz-latencies.py --mainnet
+   ./doublezero-latency-check.py --mainnet
    ```
 
 ## Usage
@@ -49,18 +49,18 @@ Choose the Solana network and whether to toggle the DZ tunnel.
 ## Mainnet
 ```bash
 # Compare connected vs. disconnected (will toggle DZ, with confirmation)
-./dz-latencies.py --mainnet
+./doublezero-latency-check.py --mainnet
 
 # Measure only current state (no tunnel changes)
-./dz-latencies.py --mainnet --no-toggle
+./doublezero-latency-check.py --mainnet --no-toggle
 ```
 ## Testnet
 ```bash
 # Compare connected vs. disconnected (will toggle DZ, with confirmation)
-./dz-latencies.py --testnet
+./doublezero-latency-check.py --testnet
 
 # Measure only current state (no tunnel changes)
-./dz-latencies.py --testnet --no-toggle
+./doublezero-latency-check.py --testnet --no-toggle
 ```
 
 ## What the script does (step by step)
@@ -126,8 +126,8 @@ Choose the Solana network and whether to toggle the DZ tunnel.
 
 | Mode                   | Command example                | What happens                                                                                               | When to use                                                                 |
 |------------------------|--------------------------------|------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------|
-| **Comparison (default)** | `./dz-latencies.py --mainnet`   | Measures **connected**, toggles DZ, measures **disconnected**, restores original state, then prints full comparison (better/same/worse/skipped). | When you want to objectively compare DZ vs. non-DZ latency.                  |
-| **Single-run (no toggle)** | `./dz-latencies.py --mainnet --no-toggle` | Measures only the **current state** (connected if DZ is up; disconnected if DZ is down). Prints a simple table of latencies; **no** comparison. | Safe mode for production/cron or when you don’t want any tunnel changes.     |
+| **Comparison (default)** | `./doublezero-latency-check.py --mainnet`   | Measures **connected**, toggles DZ, measures **disconnected**, restores original state, then prints full comparison (better/same/worse/skipped). | When you want to objectively compare DZ vs. non-DZ latency.                  |
+| **Single-run (no toggle)** | `./doublezero-latency-check.py --mainnet --no-toggle` | Measures only the **current state** (connected if DZ is up; disconnected if DZ is down). Prints a simple table of latencies; **no** comparison. | Safe mode for production/cron or when you don’t want any tunnel changes.     |
 
 ## Output anatomy
 
