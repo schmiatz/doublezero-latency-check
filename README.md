@@ -29,10 +29,17 @@ The script checks for these tools on startup and exits with an error if any are 
 
 ## Install
 
-1. Copy the script into your repo as `dz-latencies.py`.  
+1. Clone the Repo. :
+   ```bash
+   git clone git@github.com:schmiatz/doublezero-latency-check.git
+   ```
 2. Make it executable:
    ```bash
-   chmod +x dz-latencies.py
+   cd doublezero-latency-check && chmod +x dz-latencies.py
+   ```
+3. run it:
+   ```bash
+   ./dz-latencies.py --mainnet
    ```
 
 ## Usage
